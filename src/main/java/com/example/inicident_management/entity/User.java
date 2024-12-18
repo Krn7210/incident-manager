@@ -7,8 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name="users")
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,11 +36,12 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Incident> incidents;
 
-    public Long getId() {
+
+    public long getId() {
         return Id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         Id = id;
     }
 
@@ -53,20 +53,20 @@ public class User {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAddress() {
@@ -107,5 +107,20 @@ public class User {
 
     public void setIncidents(List<Incident> incidents) {
         this.incidents = incidents;
+    }
+
+    public User(long id, String username, String email, String phone, String address, String pinCode, String city, String country, List<Incident> incidents) {
+        Id = id;
+        this.username = username;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.pinCode = pinCode;
+        this.city = city;
+        this.country = country;
+        this.incidents = incidents;
+    }
+
+    public User() {
     }
 }

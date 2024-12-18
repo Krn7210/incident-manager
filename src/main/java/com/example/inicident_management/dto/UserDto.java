@@ -3,8 +3,8 @@ package com.example.inicident_management.dto;
 
 import lombok.*;
 
-@AllArgsConstructor
-@NoArgsConstructor
+
+
 public class UserDto {
     private String username;
 
@@ -79,6 +79,19 @@ public class UserDto {
     }
 
     public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public UserDto() {
+    }
+
+    public UserDto(String address, String username, String email, String phone, String pinCode, String city, String country) {
+        this.address = address;
+        this.username = username;
+        this.email = email;
+        this.phone = phone;
+        this.pinCode = pinCode;
+        this.city = city;
         this.country = country;
     }
 }

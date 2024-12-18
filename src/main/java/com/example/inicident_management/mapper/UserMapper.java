@@ -15,7 +15,8 @@ public class UserMapper {
         user.setCountry(dto.getCountry());
         user.setPhone(dto.getPhone());
         user.setPinCode(dto.getPinCode());
-        user.setUsername(dto.getCountry());
+        user.setUsername(dto.getUsername());
         return user;
     }
+
 }
